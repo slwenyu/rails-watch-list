@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :movies
-  resources :list
-  resources :bookmarks
+  get 'lists/:id', to: 'lists#show'
+  post 'lists', to: 'lists#create'
+  get 'lists', to: 'lists#index'
+  get 'lists', to: 'lists#new'
 end
