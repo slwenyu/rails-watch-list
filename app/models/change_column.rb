@@ -1,0 +1,2 @@
+class ChangeColumn < ApplicationRecord
+end
