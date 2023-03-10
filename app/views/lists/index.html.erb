@@ -1,8 +1,16 @@
-    <h1>My Movie List</h1>
-    <%= link_to "Create a movie list", lists_new_path, class: "btn btn-flat" %>
- <br>
+<header>
+    <h1>WatchList Creator</h1>
+</header>
+<main>
+    <h2>Movie Lists</h2>
+  <ul class="list-cards">
     <% @lists.each do |list| %>
-        <%= link_to lists_path(list) do %>
-            <%= list.name %>
-        <% end %>
+      <li style="background-image: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fs.studiobinder.com%2Fwp-content%2Fuploads%2F2017%2F12%2FMovie-Poster-Template-Light-With-Image.jpg%3Fx81279&imgrefurl=https%3A%2F%2Fwww.studiobinder.com%2Fblog%2Fdownloads%2Fmovie-poster-template%2F&tbnid=HKpnOo_VRmWzIM&vet=12ahUKEwjW7KOY6ND9AhVQGrcAHdyQARgQMygHegUIARDWAQ..i&docid=lm6z4TOrDwYYIM&w=2000&h=2667&q=generic%20movie%20poster&ved=2ahUKEwjW7KOY6ND9AhVQGrcAHdyQARgQMygHegUIARDWAQ');">
+        <%= link_to list.name, list_path(list) %>
+      </li>
     <% end %>
+    <li class="add-list">
+      <%= link_to 'add list', new_list_path %>
+    </li>
+  </ul>
+</main>
